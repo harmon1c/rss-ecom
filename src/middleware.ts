@@ -10,7 +10,7 @@ export default function middleware(req: NextRequest): NextResponse {
   const isLogged = !!cookies().get('login')?.value;
 
   if (guestOnlyRoutes.includes(path) && isLogged) {
-    return NextResponse.redirect(new URL('/products', req.nextUrl));
+    return NextResponse.redirect(new URL('/', req.nextUrl));
   }
 
   if (authRequiredRoutes.some((route) => path.startsWith(route)) && !isLogged) {

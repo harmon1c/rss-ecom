@@ -7,8 +7,8 @@ import type { ToastActionElement, ToastProps } from '@/components/ui/toast';
 
 import * as React from 'react';
 
-const TOAST_LIMIT = 1;
-const TOAST_REMOVE_DELAY = 1000000;
+const TOAST_LIMIT = 2;
+const TOAST_REMOVE_DELAY = 3000;
 
 type ToasterToast = {
   action?: ToastActionElement;
@@ -139,7 +139,9 @@ function dispatch(action: Action) {
 
 type Toast = Omit<ToasterToast, 'id'>;
 
-function toast({ ...props }: Toast) {
+function toast({ duration = 3000, ...props }: Toast) {
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 480 : false;
+  const adjustedDuration = isMobile ? duration * 1.5 : duration;
   const id = genId();
   const update = (props: ToasterToast) =>
     dispatch({
@@ -151,6 +153,7 @@ function toast({ ...props }: Toast) {
   dispatch({
     toast: {
       ...props,
+      duration: adjustedDuration,
       id,
       onOpenChange: (open) => {
         if (!open) {
@@ -189,4 +192,4 @@ function useToast() {
   };
 }
 
-export { toast, useToast };
+export { toast, useToast, type ToastProps };

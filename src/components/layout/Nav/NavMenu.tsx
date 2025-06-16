@@ -9,12 +9,12 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
-import { Book, BookCopy, BookMarked, BookOpen, Users } from 'lucide-react';
+import { Book, BookCopy, BookMarked, BookOpen, Bookmark, Library } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
 
-const categories = [
+const bookCategories = [
   {
     description: 'Immerse yourself in captivating stories and imaginary worlds',
     href: '/categories/fiction',
@@ -28,10 +28,40 @@ const categories = [
     title: 'Non-Fiction',
   },
   {
+    description: 'Journey through magical realms and epic adventures',
+    href: '/categories/fantasy',
+    icon: <BookCopy className="h-5 w-5 mb-1 text-primary" />,
+    title: 'Fantasy',
+  },
+  {
+    description: 'Explore futuristic worlds and technological possibilities',
+    href: '/categories/sci-fi',
+    icon: <Bookmark className="h-5 w-5 mb-1 text-primary" />,
+    title: 'Science Fiction',
+  },
+  {
+    description: 'Solve puzzles and follow thrilling detective stories',
+    href: '/categories/mystery',
+    icon: <Bookmark className="h-5 w-5 mb-1 text-primary" />,
+    title: 'Mystery',
+  },
+  {
+    description: 'Experience heartwarming tales of love and relationships',
+    href: '/categories/romance',
+    icon: <BookOpen className="h-5 w-5 mb-1 text-primary" />,
+    title: 'Romance',
+  },
+  {
     description: 'Magical stories and educational books for young readers',
     href: '/categories/children',
     icon: <BookMarked className="h-5 w-5 mb-1 text-primary" />,
     title: "Children's Books",
+  },
+  {
+    description: 'True stories of remarkable people throughout history',
+    href: '/categories/biography',
+    icon: <BookCopy className="h-5 w-5 mb-1 text-primary" />,
+    title: 'Biography',
   },
   {
     className:
@@ -41,6 +71,13 @@ const categories = [
     icon: <Book className="h-5 w-5 mb-1 text-primary" />,
     title: 'Browse All Books',
   },
+];
+
+const featuredCategories = [
+  bookCategories[0], // Fiction
+  bookCategories[1], // Non-Fiction
+  bookCategories[6], // Children's Books
+  bookCategories[8], // Browse All Books
 ];
 
 const clearNavigationMenuTriggerStyle = cn(
@@ -66,7 +103,7 @@ function NavMenu(): React.JSX.Element {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {categories.map((category) => (
+              {featuredCategories.map((category) => (
                 <ListItem Icon={category.icon} href={category.href} key={category.title} title={category.title}>
                   {category.description}
                 </ListItem>
@@ -75,56 +112,53 @@ function NavMenu(): React.JSX.Element {
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-        <NavigationMenuItem className="relative group/authors">
+        <NavigationMenuItem className="relative group/categories">
           <NavigationMenuTrigger className={clearNavigationMenuTriggerStyle}>
-            Authors
-            <span className="h-[1px] inline-block bg-primary absolute left-0 -bottom-1 w-0 group-hover/authors:w-full transition-[width] duration-300 ease-in-out" />
+            Categories
+            <span className="h-[1px] inline-block bg-primary absolute left-0 -bottom-1 w-0 group-hover/categories:w-full transition-[width] duration-300 ease-in-out" />
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px]">
-              <li className="row-span-3">
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[600px] grid-cols-2">
+              <li className="row-span-3 col-span-2">
                 <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-rose-500 to-indigo-700 p-6 no-underline outline-none focus:shadow-md"
-                    href="/authors/featured"
+                  <Link
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-amber-500/80 to-amber-700/90 p-6 no-underline outline-none focus:shadow-md"
+                    href="/categories"
                   >
-                    <Users className="h-6 w-6 text-white" />
-                    <div className="mb-2 mt-4 text-lg font-medium text-white">Featured Authors</div>
+                    <Library className="h-6 w-6 text-white" />
+                    <div className="mb-2 mt-4 text-lg font-medium text-white">All Categories</div>
                     <p className="text-sm leading-tight text-white/90">
-                      Meet our award-winning and bestselling authors
+                      Browse our complete collection of book categories and genres
                     </p>
-                  </a>
+                  </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/authors/new" title="New Authors">
-                Discover emerging voices and exciting new talents
-              </ListItem>
-              <ListItem href="/authors/events" title="Author Events">
-                Book signings, readings, and virtual meetups
-              </ListItem>
-              <ListItem href="/authors" title="All Authors">
-                Browse all authors in our bookstore
-              </ListItem>
+
+              {bookCategories.slice(0, -1).map((category) => (
+                <ListItem Icon={category.icon} href={category.href} key={category.title} title={category.title}>
+                  {category.description}
+                </ListItem>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-        <NavigationMenuItem className="relative group/events">
-          <Link href="/events" legacyBehavior passHref>
-            <NavigationMenuLink className={clearNavigationMenuLinkStyle}>
-              Events
+        <NavigationMenuItem className="relative group/sale">
+          <Link href="/sale" legacyBehavior passHref>
+            <NavigationMenuLink className={cn(clearNavigationMenuLinkStyle, 'text-red-500 text-md')}>
+              Sale
               <span
                 className={cn(
                   'h-[1px] inline-block bg-primary absolute left-0 -bottom-1',
-                  'group-hover/events:w-full transition-[width] duration-300 ease-in-out',
-                  pathname === '/events' ? 'w-full' : 'w-0',
+                  'group-hover/sale:w-full transition-[width] duration-300 ease-in-out',
+                  pathname === '/sale' ? 'w-full' : 'w-0',
                 )}
               />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
 
-        <NavigationMenuItem className="relative group/blog">
+        {/* <NavigationMenuItem className="relative group/blog">
           <Link href="/blog" legacyBehavior passHref>
             <NavigationMenuLink className={clearNavigationMenuLinkStyle}>
               Blog
@@ -137,9 +171,21 @@ function NavMenu(): React.JSX.Element {
               />
             </NavigationMenuLink>
           </Link>
+        </NavigationMenuItem> */}
+        <NavigationMenuItem className="relative group/books">
+          <NavigationMenuTrigger className={clearNavigationMenuTriggerStyle}>
+            About
+            <span className="h-[1px] inline-block bg-primary absolute left-0 -bottom-1 w-0 group-hover/books:w-full transition-[width] duration-300 ease-in-out" />
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              <ListItem href={'/about'} key={'About Story Hive'} title={'About Story Hive'}></ListItem>
+              <ListItem href={'/about-us'} key={'About us'} title={'About us'}></ListItem>
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
 
-        <NavigationMenuItem className="relative group/about">
+        {/* <NavigationMenuItem className="relative group/about">
           <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className={clearNavigationMenuLinkStyle}>
               About
@@ -148,6 +194,21 @@ function NavMenu(): React.JSX.Element {
                   'h-[1px] inline-block bg-primary absolute left-0 -bottom-1',
                   'group-hover/about:w-full transition-[width] duration-300 ease-in-out',
                   pathname === '/about' ? 'w-full' : 'w-0',
+                )}
+              />
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem> */}
+
+        <NavigationMenuItem className="relative group/contacts">
+          <Link href="/contacts" legacyBehavior passHref>
+            <NavigationMenuLink className={clearNavigationMenuLinkStyle}>
+              Contact Us
+              <span
+                className={cn(
+                  'h-[1px] inline-block bg-primary absolute left-0 -bottom-1',
+                  'group-hover/contacts:w-full transition-[width] duration-300 ease-in-out',
+                  pathname === '/contacts' ? 'w-full' : 'w-0',
                 )}
               />
             </NavigationMenuLink>

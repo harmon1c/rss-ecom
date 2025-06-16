@@ -113,24 +113,34 @@ export default function AboutPage(): React.JSX.Element {
             <div className="p-4">
               <Mail className="h-10 w-10 mx-auto text-primary mb-4" />
               <h3 className="font-medium mb-2 dark:text-amber-200">Email Us</h3>
-              <p className="text-muted-foreground">contact@storyhive.com</p>
+              <a className="hover:underline" href="mailto:admin@storyhive.com">
+                admin@storyhive.com
+              </a>
             </div>
             <div className="p-4">
               <Map className="h-10 w-10 mx-auto text-primary mb-4" />
               <h3 className="font-medium mb-2 dark:text-amber-200">Visit Us</h3>
-              <p className="text-muted-foreground">123 Book Lane, Literary City</p>
+              <span>
+                828 Broadway
+                <br />
+                New York, NY 10003
+                <br />
+                United States
+              </span>
             </div>
             <div className="p-4">
               <Clock className="h-10 w-10 mx-auto text-primary mb-4" />
               <h3 className="font-medium mb-2 dark:text-amber-200">Online Hours</h3>
-              <p className="text-muted-foreground">24/7 - Always Open</p>
+              <p className="text-muted-foreground">
+                <span>11 AM - 9 PM (Monday-Sunday)</span>
+              </p>
             </div>
           </div>
 
           <div className="mt-12 text-center">
             <Link
               className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
-              href="/contact"
+              href="/contacts"
             >
               Contact Us
             </Link>

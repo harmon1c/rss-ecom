@@ -1,0 +1,1429 @@
+{
+  "limit": 20,
+  "offset": 0,
+  "count": 12,
+  "total": 12,
+  "results": [
+    {
+      "id": "468f5b19-0b27-4748-83a7-d214a8efda05",
+      "version": 46,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "A Game of Thrones: The Graphic Novel, Volume Four"
+      },
+      "description": {
+        "en-US": "George R. R. Martin's epic fantasy masterwork A Game of Thrones is brought to life in the pages of this full-colour graphic novel. This is the first volume in what is sure to be one of the most coveted collaborations of the year.\n\nNow a major Sky Atlantic TV series from HBO, featuring a stellar cast.\n\n\n\nWinter is coming. Such is the stern motto of House Stark, the northernmost of the fiefdoms that owe allegiance to King Robert Baratheon in far-off King's Landing. There Eddard Stark of Winterfell rules in Robert's name. There his family dwells in peace and comfort: his proud wife, Catelyn; his sons Robb, Brandon, and Rickon; his daughters Sansa and Arya; and his bastard son, Jon Snow. Far to the north, behind the towering Wall, lie savage Wildings and worse - unnatural things relegated to myth during the centuries-long summer, but proving all too real and all too deadly in the turning of the season.\n\nYet a more immediate threat lurks to the south, where Jon Arryn, the Hand of the King, has died under mysterious circumstances. Now Robert is riding north to Winterfell, bringing his queen, the lovely but cold Cersei, his son, the cruel, vainglorious Prince Joffrey, and the queen's brothers Jamie and Tyrion of the powerful and wealthy House Lannister - the first a swordsman without equal, the second a dwarf whose stunted stature belies a brilliant mind. All are heading for Winterfell and a fateful encounter that will change the course of kingdoms.\n\nMeanwhile, across the Narrow Sea, Prince Viserys, heir of the fallen House Targaryen, which once ruled all of Westeros, schemes to reclaim the throne with an army of barbarian Dothraki--whose loyalty he will purchase in the only coin left to him: his beautiful yet innocent sister, Daenerys.\n\nSource: Publisher"
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "155ada66-7950-4ff6-a547-bea629d8ad1f"
+        },
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "a-game-of-thrones-the-graphic-novel-volume-four"
+      },
+      "metaTitle": {
+        "en-US": "A Game of Thrones: The Graphic Novel, Volume Four",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "George R. R. Martin's epic fantasy masterwork A Game of Thrones is brought to life in the pages of this full-colour graphic novel. This is the first volume in what is sure to be one of the most coveted collaborations of the year.\n\nNow a major Sky Atlantic TV series from HBO, featuring a stellar cast.\n\n\n\nWinter is coming. Such is the stern motto of House Stark, the northernmost of the fiefdoms that owe allegiance to King Robert Baratheon in far-off King's Landing. There Eddard Stark of Winterfell rules in Robert's name. There his family dwells in peace and comfort: his proud wife, Catelyn; his sons Robb, Brandon, and Rickon; his daughters Sansa and Arya; and his bastard son, Jon Snow. Far to the north, behind the towering Wall, lie savage Wildings and worse - unnatural things relegated to myth during the centuries-long summer, but proving all too real and all too deadly in the turning of the season.\n\nYet a more immediate threat lurks to the south, where Jon Arryn, the Hand of the King, has died under mysterious circumstances. Now Robert is riding north to Winterfell, bringing his queen, the lovely but cold Cersei, his son, the cruel, vainglorious Prince Joffrey, and the queen's brothers Jamie and Tyrion of the powerful and wealthy House Lannister - the first a swordsman without equal, the second a dwarf whose stunted stature belies a brilliant mind. All are heading for Winterfell and a fateful encounter that will change the course of kingdoms.\n\nMeanwhile, across the Narrow Sea, Prince Viserys, heir of the fallen House Targaryen, which once ruled all of Westeros, schemes to reclaim the throne with an army of barbarian Dothraki--whose loyalty he will purchase in the only coin left to him: his beautiful yet innocent sister, Daenerys.\n\nSource: Publisher",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-FAN-000",
+        "key": "book-FAN000-master",
+        "prices": [
+          {
+            "id": "c266986a-abf1-4d3f-a3bf-a9355a624882",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 2999,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-FAN-000",
+            "discounted": {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 2699,
+                "fractionDigits": 2
+              },
+              "discount": {
+                "typeId": "product-discount",
+                "id": "ea2eb0d7-f941-4e78-a2ff-9fd5c6a84bcf"
+              }
+            }
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/71nYbbZMdwL-wrYcl55n.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 770,
+              "h": 1200
+            }
+          },
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/s-l1200-NtR8xJQm.jpg",
+            "label": "paperback",
+            "dimensions": {
+              "w": 900,
+              "h": 1200
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "genre",
+            "value": "Fantasy"
+          },
+          {
+            "name": "publisher",
+            "value": "Harper Voyager"
+          },
+          {
+            "name": "pageCount",
+            "value": 876
+          },
+          {
+            "name": "publishedDate",
+            "value": "2012"
+          },
+          {
+            "name": "isbn",
+            "value": "UOM:39015050507618"
+          },
+          {
+            "name": "author",
+            "value": {
+              "en-US": "George R. R. Martin, Daniel Abraham",
+              "uk-UA": ""
+            }
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "5d272c8b-cc9c-41b0-a100-0145452c5159"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-FAN-000",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-23T13:21:52.378Z",
+      "lastModifiedAt": "2025-05-27T16:16:57.028Z"
+    },
+    {
+      "id": "36958027-e773-4362-afc0-6d530aa173ce",
+      "version": 24,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "The Hunger Games"
+      },
+      "description": {
+        "en-US": "First in the ground-breaking HUNGER GAMES trilogy. Set in a dark vision of the near future, a terrifying reality TV show is taking place. Twelve boys and twelve girls are forced to appear in a live event called The Hunger Games. There is only one rule: kill or be killed. When sixteen-year-old Katniss Everdeen steps forward to take her younger sister's place in the games, she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "f66f3e8a-050a-4eca-9d0e-4c8d6eca8b3d"
+        },
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "the-hunger-games"
+      },
+      "metaTitle": {
+        "en-US": "The Hunger Games",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "First in the ground-breaking HUNGER GAMES trilogy. Set in a dark vision of the near future, a terrifying reality TV show is taking place. Twelve boys and twelve girls are forced to appear in a live event called The Hunger Games. There is only one rule: kill or be killed. When sixteen-year-old Katniss Everdeen steps forward to take her younger sister's place in the games, she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-CHL-001",
+        "key": "book-CHL001-master",
+        "prices": [
+          {
+            "id": "c6cbb6ab-2db2-4733-bf5d-d24ac365f6d3",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 2499,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-CHL-001"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/71un2hI4mcL-RGwUlLtC.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 1688,
+              "h": 2555
+            }
+          },
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/books_hungerGames_he-F5su86BN.png",
+            "label": "paperback",
+            "dimensions": {
+              "w": 1000,
+              "h": 870
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "Suzanne Collins"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "9781407153339"
+          },
+          {
+            "name": "pageCount",
+            "value": 435
+          },
+          {
+            "name": "publisher",
+            "value": "Scholastic Children's Books"
+          },
+          {
+            "name": "publishedDate",
+            "value": "2014"
+          },
+          {
+            "name": "genre",
+            "value": "Children"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "93b5b846-1aaa-4f0b-9109-1f97a971b838"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-CHL-001",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-23T13:55:08.045Z",
+      "lastModifiedAt": "2025-05-27T15:47:01.285Z"
+    },
+    {
+      "id": "4a1a9545-b17e-49ba-a514-b784812f9178",
+      "version": 16,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "Dracula"
+      },
+      "description": {
+        "en-US": "Dracula is a seminal work of horror literature that has captivated readers for over a century. Bram Stoker's novel is a masterful exploration of the human psyche, delving into themes of desire, fear, and the unknown. The novel's epistolary format allows readers to experience the story through the eyes of multiple characters, each with their own unique perspective on the events that unfold. At its core, Dracula is a story about the battle between good and evil. Count Dracula is a powerful vampire who seeks to spread his curse to others, while a group of determined individuals work to stop him. The novel's portrayal of evil is complex and nuanced, with Dracula serving as both a terrifying monster and a tragic figure who is cursed by his own desires. One of the most fascinating aspects of Dracula is its exploration of sexuality. The novel is filled with themes of seduction and desire, with Dracula representing a dark and dangerous form of sexual energy. The female characters in the novel are particularly interesting, as they are both attracted to and repelled by Dracula's power. Finally, Dracula is a story about the fear of the unknown. Stoker's novel was written during a time when scientific discoveries were challenging traditional beliefs about the world. The idea of a supernatural creature like Dracula was both terrifying and fascinating to readers, as it represented a world beyond their understanding. Overall, Dracula is a timeless work of horror fiction that continues to captivate readers today. Its exploration of themes such as good vs. evil, sexuality, and the fear of the unknown make it a complex and thought-provoking read that will stay with readers long after they finish the book.\nSource: Publisher"
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "5212fc6d-a094-47da-af6b-a155e62a44ab"
+        },
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "dracula"
+      },
+      "metaTitle": {
+        "en-US": "Dracula",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "Dracula is a seminal work of horror literature that has captivated readers for over a century. Bram Stoker's novel is a masterful exploration of the human psyche, delving into themes of desire, fear, and the unknown. The novel's epistolary format allows readers to experience the story through the eyes of multiple characters, each with their own unique perspective on the events that unfold. At its core, Dracula is a story about the battle between good and evil. Count Dracula is a powerful vampire who seeks to spread his curse to others, while a group of determined individuals work to stop him. The novel's portrayal of evil is complex and nuanced, with Dracula serving as both a terrifying monster and a tragic figure who is cursed by his own desires. One of the most fascinating aspects of Dracula is its exploration of sexuality. The novel is filled with themes of seduction and desire, with Dracula representing a dark and dangerous form of sexual energy. The female characters in the novel are particularly interesting, as they are both attracted to and repelled by Dracula's power. Finally, Dracula is a story about the fear of the unknown. Stoker's novel was written during a time when scientific discoveries were challenging traditional beliefs about the world. The idea of a supernatural creature like Dracula was both terrifying and fascinating to readers, as it represented a world beyond their understanding. Overall, Dracula is a timeless work of horror fiction that continues to captivate readers today. Its exploration of themes such as good vs. evil, sexuality, and the fear of the unknown make it a complex and thought-provoking read that will stay with readers long after they finish the book.\nSource: Publisher",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": " BOOK-MYS-001",
+        "key": "book-MYST001-master",
+        "prices": [
+          {
+            "id": "dce5a1c7-5929-4d8a-80c3-60033d1aff21",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 999,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-MYS-001"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/61jl29eQPSL._UF1000%2C-IzfUcYfm.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 706,
+              "h": 1000
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "Bram Stoker"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "9780369409386"
+          },
+          {
+            "name": "publisher",
+            "value": "Aegitas"
+          },
+          {
+            "name": "publishedDate",
+            "value": "2023"
+          },
+          {
+            "name": "pageCount",
+            "value": 373
+          },
+          {
+            "name": "genre",
+            "value": "Mystery"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "1fc22198-ad16-4484-87e2-344ff1487249"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-MYST-001",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-23T16:01:20.913Z",
+      "lastModifiedAt": "2025-05-27T16:10:18.996Z"
+    },
+    {
+      "id": "649b5cc5-24d6-45db-86f7-1cf64b947128",
+      "version": 14,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "Steve Jobs"
+      },
+      "description": {
+        "en-US": "Walter Isaacson's worldwide bestselling biography of Apple cofounder Steve Jobs. Based on more than forty interviews with Steve Jobs conducted over two years--as well as interviews with more than 100 family members, friends, adversaries, competitors, and colleagues--Walter Isaacson has written a riveting story of the roller-coaster life and searingly intense personality of a creative entrepreneur whose passion for perfection and ferocious drive revolutionized six industries: personal computers, animated movies, music, phones, tablet computing, and digital publishing. Isaacson's portrait touched millions of readers. At a time when America is seeking ways to sustain its innovative edge, Jobs stands as the ultimate icon of inventiveness and applied imagination. He knew that the best way to create value in the twenty-first century was to connect creativity with technology. He built a company where leaps of the imagination were combined with remarkable feats of engineering. Although Jobs cooperated with the author, he asked for no control over what was written. He put nothing off-limits. He encouraged the people he knew to speak honestly. He himself spoke candidly about the people he worked with and competed against. His friends, foes, and colleagues offer an unvarnished view of the passions, perfectionism, obsessions, artistry, devilry, and compulsion for control that shaped his approach to business and the innovative products that resulted. His tale is instructive and cautionary, filled with lessons about innovation, character, leadership, and values. Steve Jobs is the inspiration for the movie of the same name starring Michael Fassbender, Kate Winslet, Seth Rogen, and Jeff Daniels, directed by Danny Boyle with a screenplay by Aaron Sorkin."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "c93e9929-c9fb-4520-9a4a-5a0d8f59c2c3"
+        },
+        {
+          "typeId": "category",
+          "id": "0d53f9b8-3d55-4d3c-aece-b781c4bbf81e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "steve-jobs"
+      },
+      "metaTitle": {
+        "en-US": "Steve Jobs",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "Walter Isaacson's worldwide bestselling biography of Apple cofounder Steve Jobs. Based on more than forty interviews with Steve Jobs conducted over two years--as well as interviews with more than 100 family members, friends, adversaries, competitors, and colleagues--Walter Isaacson has written a riveting story of the roller-coaster life and searingly intense personality of a creative entrepreneur whose passion for perfection and ferocious drive revolutionized six industries: personal computers, animated movies, music, phones, tablet computing, and digital publishing. Isaacson's portrait touched millions of readers. At a time when America is seeking ways to sustain its innovative edge, Jobs stands as the ultimate icon of inventiveness and applied imagination. He knew that the best way to create value in the twenty-first century was to connect creativity with technology. He built a company where leaps of the imagination were combined with remarkable feats of engineering. Although Jobs cooperated with the author, he asked for no control over what was written. He put nothing off-limits. He encouraged the people he knew to speak honestly. He himself spoke candidly about the people he worked with and competed against. His friends, foes, and colleagues offer an unvarnished view of the passions, perfectionism, obsessions, artistry, devilry, and compulsion for control that shaped his approach to business and the innovative products that resulted. His tale is instructive and cautionary, filled with lessons about innovation, character, leadership, and values. Steve Jobs is the inspiration for the movie of the same name starring Michael Fassbender, Kate Winslet, Seth Rogen, and Jeff Daniels, directed by Danny Boyle with a screenplay by Aaron Sorkin.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-BIO-001",
+        "key": "book-BIO001-master",
+        "prices": [
+          {
+            "id": "cebfe500-e1a0-4c85-84e2-3eb115de5f92",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 1699,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-BIO-001",
+            "discounted": {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 1529,
+                "fractionDigits": 2
+              },
+              "discount": {
+                "typeId": "product-discount",
+                "id": "ea2eb0d7-f941-4e78-a2ff-9fd5c6a84bcf"
+              }
+            }
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/11084145-rswmjRfH.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 1869,
+              "h": 2846
+            }
+          },
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/product-jpeg-so4DVF05.jpg",
+            "label": "paperback",
+            "dimensions": {
+              "w": 1315,
+              "h": 1979
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "Walter Isaacson"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "9781451648539"
+          },
+          {
+            "name": "publisher",
+            "value": "Simon & Schuster"
+          },
+          {
+            "name": "pageCount",
+            "value": 630
+          },
+          {
+            "name": "publishedDate",
+            "value": "2011"
+          },
+          {
+            "name": "genre",
+            "value": "Biography,  Nonfiction"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "bd2fef2a-5695-4c1c-adb1-f344577a0be2"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-BIO-001",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-23T16:07:54.645Z",
+      "lastModifiedAt": "2025-05-27T16:16:57.028Z"
+    },
+    {
+      "id": "23627cce-aaf0-4392-afdf-a20acfb59ccc",
+      "version": 13,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "Neuromancer"
+      },
+      "description": {
+        "en-US": "Hotwired to the leading edges of art and technology, Neuromancer is a cyberpunk, science fiction masterpiece—a classic that ranks with 1984 and Brave New World as one of the twentieth century’s most potent visions of the future.\n\nThe Matrix is a world within the world, a global consensus-hallucination, the representation of every byte of data in cyberspace...\n\nHenry Dorsett Case was the sharpest data-thief in the business, until vengeful former employees crippled his nervous system. But now a new and very mysterious employer recruits him for a last-chance run. The target: an unthinkably powerful artificial intelligence orbiting Earth in service of the sinister Tessier-Ashpool business clan. With a dead man riding shotgun and Molly, mirror-eyed street-samurai, to watch his back, Case embarks on an adventure that ups the ante on an entire genre of fiction.\n\nThe winner of the Hugo, Nebula, and Philip K. Dick Awards, Neuromancer was the first fully-realized glimpse of humankind’s digital future—a shocking vision that has challenged our assumptions about our technology and ourselves, reinvented the way we speak and think, and forever altered the landscape of our imaginations."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "7f72c280-cb7f-428c-acd5-4b7973cee7b5"
+        },
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "neuromancer"
+      },
+      "metaTitle": {
+        "en-US": "Neuromancer",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "Hotwired to the leading edges of art and technology, Neuromancer is a cyberpunk, science fiction masterpiece—a classic that ranks with 1984 and Brave New World as one of the twentieth century’s most potent visions of the future.\n\nThe Matrix is a world within the world, a global consensus-hallucination, the representation of every byte of data in cyberspace...\n\nHenry Dorsett Case was the sharpest data-thief in the business, until vengeful former employees crippled his nervous system. But now a new and very mysterious employer recruits him for a last-chance run. The target: an unthinkably powerful artificial intelligence orbiting Earth in service of the sinister Tessier-Ashpool business clan. With a dead man riding shotgun and Molly, mirror-eyed street-samurai, to watch his back, Case embarks on an adventure that ups the ante on an entire genre of fiction.\n\nThe winner of the Hugo, Nebula, and Philip K. Dick Awards, Neuromancer was the first fully-realized glimpse of humankind’s digital future—a shocking vision that has challenged our assumptions about our technology and ourselves, reinvented the way we speak and think, and forever altered the landscape of our imaginations.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-SCI-001",
+        "key": "book-SCIFI001-master",
+        "prices": [
+          {
+            "id": "868f8db2-7a03-45e7-85e2-20bda73bcba8",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 1199,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-SCI-001"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/6088007-GFFz_TH2.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 333,
+              "h": 500
+            }
+          },
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/1_Tv6y_TaFwjJzXwHMn9-iYO9beRt.jpg",
+            "label": "illustration",
+            "dimensions": {
+              "w": 1024,
+              "h": 1471
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "William Gibson"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "B000O76ON6"
+          },
+          {
+            "name": "publisher",
+            "value": "Ace"
+          },
+          {
+            "name": "pageCount",
+            "value": 288
+          },
+          {
+            "name": "publishedDate",
+            "value": "2007"
+          },
+          {
+            "name": "genre",
+            "value": "Science Fiction, Fiction, Cyberpunk"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "f1db5a7f-fe2e-4cc9-a319-e8f7d1aeac87"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-SCIFI-001",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-23T16:14:45.677Z",
+      "lastModifiedAt": "2025-05-27T15:46:48.450Z"
+    },
+    {
+      "id": "21642d6c-8adf-4e2b-b0be-f70a97876883",
+      "version": 16,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "Pride and Prejudice"
+      },
+      "description": {
+        "en-US": "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work \"her own darling child\" and its vivacious heroine, Elizabeth Bennet, \"as delightful a creature as ever appeared in print.\" The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring. And Jane Austen's radiant wit sparkles as her characters dance a delicate quadrille of flirtation and intrigue, making this book the most superb comedy of manners of Regency England."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "f40a78a6-97f9-4998-aa9c-fbcac85a29a8"
+        },
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "pride-and-prejudice"
+      },
+      "metaTitle": {
+        "en-US": "Pride and Prejudice",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "Since its immediate success in 1813, Pride and Prejudice has remained one of the most popular novels in the English language. Jane Austen called this brilliant work \"her own darling child\" and its vivacious heroine, Elizabeth Bennet, \"as delightful a creature as ever appeared in print.\" The romantic clash between the opinionated Elizabeth and her proud beau, Mr. Darcy, is a splendid performance of civilized sparring. And Jane Austen's radiant wit sparkles as her characters dance a delicate quadrille of flirtation and intrigue, making this book the most superb comedy of manners of Regency England.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-ROM-001",
+        "key": "book-ROM001-master",
+        "prices": [
+          {
+            "id": "c9e65393-312e-440f-8367-bfa63df2295d",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 1499,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-ROM-001",
+            "discounted": {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 1349,
+                "fractionDigits": 2
+              },
+              "discount": {
+                "typeId": "product-discount",
+                "id": "ea2eb0d7-f941-4e78-a2ff-9fd5c6a84bcf"
+              }
+            }
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/9781847493699-WkdZQKmc.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 1524,
+              "h": 2339
+            }
+          },
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/1885-Al1r4idi.jpg",
+            "label": "paperback",
+            "dimensions": {
+              "w": 291,
+              "h": 450
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "Jane Austen, Anna Quindlen (Introduction)"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "9780679783268"
+          },
+          {
+            "name": "genre",
+            "value": "Classics, Romance, Fiction, Historical Fiction"
+          },
+          {
+            "name": "publishedDate",
+            "value": "2023"
+          },
+          {
+            "name": "publisher",
+            "value": "Modern Library"
+          },
+          {
+            "name": "pageCount",
+            "value": 279
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "07234942-b632-400f-871e-188e7760183b"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-ROM-001",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-23T16:20:54.673Z",
+      "lastModifiedAt": "2025-05-27T16:17:54.524Z"
+    },
+    {
+      "id": "09bea9fa-ed7f-4691-be9b-3eafbe180692",
+      "version": 14,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "The Time Machine"
+      },
+      "description": {
+        "en-US": "When a Victorian scientist invents a machine that allows him to travel to the year A.D. 802,701, he encounters a highly evolved society of people called Eloi, for whom suffering has apparently been replaced by refinement and harmony. First impressions are misleading, however, and his discovery of the Eloi’s true relationship to the brutish Morlocks who lurk in tunnels beneath them leads him to a horrifying insight into the fate of mankind and its roots in his own time."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "7f72c280-cb7f-428c-acd5-4b7973cee7b5"
+        },
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "the-time-machine"
+      },
+      "metaTitle": {
+        "en-US": "The Time Machine",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "When a Victorian scientist invents a machine that allows him to travel to the year A.D. 802,701, he encounters a highly evolved society of people called Eloi, for whom suffering has apparently been replaced by refinement and harmony. First impressions are misleading, however, and his discovery of the Eloi’s true relationship to the brutish Morlocks who lurk in tunnels beneath them leads him to a horrifying insight into the fate of mankind and its roots in his own time.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-SCI-000",
+        "key": "book-SCIFI000-master",
+        "prices": [
+          {
+            "id": "04ba30ab-3bc0-46e4-99ed-6acc112bce25",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 1299,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-SCI-000"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/the-time-machine-83-OPpWBukt.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 1200,
+              "h": 1800
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "H.G. Wells"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "B004XVQ73G"
+          },
+          {
+            "name": "publisher",
+            "value": "Atria Books"
+          },
+          {
+            "name": "pageCount",
+            "value": 128
+          },
+          {
+            "name": "publishedDate",
+            "value": "2011"
+          },
+          {
+            "name": "genre",
+            "value": "Science Fiction, Fiction, Classics"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "8a8ba5b2-f4d9-4df1-b9f2-25350b04737b"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-SCIFI-000",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-24T12:38:53.998Z",
+      "lastModifiedAt": "2025-05-27T15:41:08.500Z"
+    },
+    {
+      "id": "746fb364-ecc9-4351-a9d9-2f64788d5912",
+      "version": 15,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "Fifty Shades of Grey"
+      },
+      "description": {
+        "en-US": "When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms.\n \nShocked yet thrilled by Grey’s singular erotic tastes, Ana hesitates. For all the trappings of success—his multinational businesses, his vast wealth, his loving family—Grey is a man tormented by demons and consumed by the need to control. When the couple embarks on a daring, passionately physical affair, Ana discovers Christian Grey’s secrets and explores her own dark desires.\n\nErotic, amusing, and deeply moving, the Fifty Shades Trilogy is a tale that will obsess you, possess you, and stay with you forever.\n\nThis book is intended for mature audiences."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "f40a78a6-97f9-4998-aa9c-fbcac85a29a8"
+        },
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "fifty-shades-of-grey"
+      },
+      "metaTitle": {
+        "en-US": "Fifty Shades of Grey",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms.\n \nShocked yet thrilled by Grey’s singular erotic tastes, Ana hesitates. For all the trappings of success—his multinational businesses, his vast wealth, his loving family—Grey is a man tormented by demons and consumed by the need to control. When the couple embarks on a daring, passionately physical affair, Ana discovers Christian Grey’s secrets and explores her own dark desires.\n\nErotic, amusing, and deeply moving, the Fifty Shades Trilogy is a tale that will obsess you, possess you, and stay with you forever.\n\nThis book is intended for mature audiences.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-ROM-002",
+        "key": "book-ROM002-master",
+        "prices": [
+          {
+            "id": "b11d4c9d-7053-49a0-a96e-68962fd8de74",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 1599,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-ROM-002",
+            "discounted": {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 1439,
+                "fractionDigits": 2
+              },
+              "discount": {
+                "typeId": "product-discount",
+                "id": "ea2eb0d7-f941-4e78-a2ff-9fd5c6a84bcf"
+              }
+            }
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/81OviQ6gLtL-YyEwSdHv.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 1521,
+              "h": 2339
+            }
+          },
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/140724-fifty-shades--WLmxEX3E.jpg",
+            "label": "paperback",
+            "dimensions": {
+              "w": 1500,
+              "h": 967
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "E.L. James"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "9781612130293"
+          },
+          {
+            "name": "publisher",
+            "value": "Vintage"
+          },
+          {
+            "name": "pageCount",
+            "value": 356
+          },
+          {
+            "name": "publishedDate",
+            "value": "2011"
+          },
+          {
+            "name": "genre",
+            "value": "Fiction, BDSM, Adult, Contemporary, Contemporary Romance"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "404b8c6a-110f-4787-a34b-b2238372059a"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-ROM-002",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-24T12:53:24.806Z",
+      "lastModifiedAt": "2025-05-27T16:17:54.656Z"
+    },
+    {
+      "id": "78ff0151-be68-4296-a7ab-7a634d7a7556",
+      "version": 10,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "Twilight"
+      },
+      "description": {
+        "en-US": "About three things I was absolutely positive.\n\nFirst, Edward was a vampire.\n\nSecond, there was a part of him - and I didn't know how dominant that part might be - that thirsted for my blood.\n\nAnd third, I was unconditionally and irrevocably in love with him.\n\nDeeply seductive and extraordinarily suspenseful, Twilight is a love story with bite."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "f66f3e8a-050a-4eca-9d0e-4c8d6eca8b3d"
+        },
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "twilight"
+      },
+      "metaTitle": {
+        "en-US": "Twilight",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "About three things I was absolutely positive.\n\nFirst, Edward was a vampire.\n\nSecond, there was a part of him - and I didn't know how dominant that part might be - that thirsted for my blood.\n\nAnd third, I was unconditionally and irrevocably in love with him.\n\nDeeply seductive and extraordinarily suspenseful, Twilight is a love story with bite.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-CHL-002",
+        "key": "book-CHL002-master",
+        "prices": [
+          {
+            "id": "2d426836-95d6-474c-a511-94b56edf1d9a",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 1499,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-CHL-002"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/9781904233657-Cdgm_0G6.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 407,
+              "h": 640
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "Stephenie Meyer"
+            }
+          },
+          {
+            "name": "pageCount",
+            "value": 498
+          },
+          {
+            "name": "isbn",
+            "value": "9780316015844"
+          },
+          {
+            "name": "publisher",
+            "value": "Little, Brown and Company"
+          },
+          {
+            "name": "publishedDate",
+            "value": "2006"
+          },
+          {
+            "name": "genre",
+            "value": "Fantasy, Young Adult, Romance, Fiction, Vampires, Paranormal"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "f19ae22e-e5dd-4b81-8a2f-bd5d6f9d4397"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-CHL-002",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-24T13:00:27.757Z",
+      "lastModifiedAt": "2025-05-27T15:47:10.579Z"
+    },
+    {
+      "id": "f6ce0a39-9987-467f-b073-9c82c65f6c95",
+      "version": 14,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "Einstein: His Life and Universe"
+      },
+      "description": {
+        "en-US": "Einstein was a rebel and nonconformist from boyhood days, and these character traits drove both his life and his science. In this narrative, Walter Isaacson explains how his mind worked and the mysteries of the universe that he discovered."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "c93e9929-c9fb-4520-9a4a-5a0d8f59c2c3"
+        },
+        {
+          "typeId": "category",
+          "id": "0d53f9b8-3d55-4d3c-aece-b781c4bbf81e"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "einstein-his-life-and-universe"
+      },
+      "metaTitle": {
+        "en-US": "Einstein: His Life and Universe",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "Einstein was a rebel and nonconformist from boyhood days, and these character traits drove both his life and his science. In this narrative, Walter Isaacson explains how his mind worked and the mysteries of the universe that he discovered.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-BIO-002",
+        "key": "book-BIO002-master",
+        "prices": [
+          {
+            "id": "cd6f1a38-bbae-4552-af13-5d0d402389aa",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 2299,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-BIO-002",
+            "discounted": {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 2069,
+                "fractionDigits": 2
+              },
+              "discount": {
+                "typeId": "product-discount",
+                "id": "ea2eb0d7-f941-4e78-a2ff-9fd5c6a84bcf"
+              }
+            }
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/9780743264747_a-2kAE__Gk.png",
+            "label": "cover",
+            "dimensions": {
+              "w": 996,
+              "h": 1500
+            }
+          },
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/einstein-his-life-an-hFVv2t75.png",
+            "label": "paperback",
+            "dimensions": {
+              "w": 1000,
+              "h": 800
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "Walter Isaacson"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "9780743264730"
+          },
+          {
+            "name": "publisher",
+            "value": "Simon & Schuster"
+          },
+          {
+            "name": "pageCount",
+            "value": 675
+          },
+          {
+            "name": "publishedDate",
+            "value": "2007"
+          },
+          {
+            "name": "genre",
+            "value": "Biography, Nonfiction, Science, History, Physics"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "1ef9ad42-3202-4c70-88aa-6fb4424c69d4"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-BIO-002",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-24T13:07:52.775Z",
+      "lastModifiedAt": "2025-05-27T16:17:31.231Z"
+    },
+    {
+      "id": "3486bb91-00d5-46fe-80e7-ff7cd3ce7c99",
+      "version": 10,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "And Then There Were None"
+      },
+      "description": {
+        "en-US": "First, there were ten—a curious assortment of strangers summoned as weekend guests to a little private island off the coast of Devon. Their host, an eccentric millionaire unknown to all of them, is nowhere to be found. All that the guests have in common is a wicked past they're unwilling to reveal—and a secret that will seal their fate. For each has been marked for murder. A famous nursery rhyme is framed and hung in every room of the mansion:\n\n\"Ten little boys went out to dine; One choked his little self and then there were nine. Nine little boys sat up very late; One overslept himself and then there were eight. Eight little boys traveling in Devon; One said he'd stay there then there were seven. Seven little boys chopping up sticks; One chopped himself in half and then there were six. Six little boys playing with a hive; A bumblebee stung one and then there were five. Five little boys going in for law; One got in Chancery and then there were four. Four little boys going out to sea; A red herring swallowed one and then there were three. Three little boys walking in the zoo; A big bear hugged one and then there were two. Two little boys sitting in the sun; One got frizzled up and then there was one. One little boy left all alone; He went out and hanged himself and then there were none.\"\n\nWhen they realize that murders are occurring as described in the rhyme, terror mounts. One by one they fall prey. Before the weekend is out, there will be none. Who has choreographed this dastardly scheme? And who will be left to tell the tale? Only the dead are above suspicion."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        },
+        {
+          "typeId": "category",
+          "id": "5212fc6d-a094-47da-af6b-a155e62a44ab"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "and-then-there-were-none"
+      },
+      "metaTitle": {
+        "en-US": "And Then There Were None",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "First, there were ten—a curious assortment of strangers summoned as weekend guests to a little private island off the coast of Devon. Their host, an eccentric millionaire unknown to all of them, is nowhere to be found. All that the guests have in common is a wicked past they're unwilling to reveal—and a secret that will seal their fate. For each has been marked for murder. A famous nursery rhyme is framed and hung in every room of the mansion:\n\n\"Ten little boys went out to dine; One choked his little self and then there were nine. Nine little boys sat up very late; One overslept himself and then there were eight. Eight little boys traveling in Devon; One said he'd stay there then there were seven. Seven little boys chopping up sticks; One chopped himself in half and then there were six. Six little boys playing with a hive; A bumblebee stung one and then there were five. Five little boys going in for law; One got in Chancery and then there were four. Four little boys going out to sea; A red herring swallowed one and then there were three. Three little boys walking in the zoo; A big bear hugged one and then there were two. Two little boys sitting in the sun; One got frizzled up and then there was one. One little boy left all alone; He went out and hanged himself and then there were none.\"\n\nWhen they realize that murders are occurring as described in the rhyme, terror mounts. One by one they fall prey. Before the weekend is out, there will be none. Who has choreographed this dastardly scheme? And who will be left to tell the tale? Only the dead are above suspicion.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-MYS-002",
+        "key": "book-MYST002-master",
+        "prices": [
+          {
+            "id": "f7ea5931-c342-4c4e-8d7b-c9c4f3c5242d",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 799,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-MYS-002"
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/71NvWibzW5L._UF1000%2C-gUqtyZZF.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 652,
+              "h": 1000
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "Agatha Christie"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "9780312330873"
+          },
+          {
+            "name": "publisher",
+            "value": "St. Martin's Griffin"
+          },
+          {
+            "name": "pageCount",
+            "value": 264
+          },
+          {
+            "name": "publishedDate",
+            "value": "2004"
+          },
+          {
+            "name": "genre",
+            "value": "Mystery, Fiction, Thriller, Crime, Mystery Thriller"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "aa2e8c1f-9b13-4e9e-b08c-d0c040230121"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-MYST-002",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-24T13:18:06.155Z",
+      "lastModifiedAt": "2025-05-27T15:46:44.579Z"
+    },
+    {
+      "id": "1837c17e-995a-4d17-9d3a-b8cf0094b1be",
+      "version": 14,
+      "productType": {
+        "typeId": "product-type",
+        "id": "b884d58f-4f55-405b-8db5-dee4612e2313"
+      },
+      "name": {
+        "en-US": "The Fellowship of the Ring"
+      },
+      "description": {
+        "en-US": "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.\n\nIn ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit.\n\nIn a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose."
+      },
+      "categories": [
+        {
+          "typeId": "category",
+          "id": "e3e4f0a1-4ec4-46d4-9218-d31df53f3b0e"
+        },
+        {
+          "typeId": "category",
+          "id": "155ada66-7950-4ff6-a547-bea629d8ad1f"
+        }
+      ],
+      "categoryOrderHints": {},
+      "slug": {
+        "en-US": "the-fellowship-of-the-ring"
+      },
+      "metaTitle": {
+        "en-US": "The Fellowship of the Ring",
+        "uk-UA": ""
+      },
+      "metaDescription": {
+        "en-US": "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them.\n\nIn ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit.\n\nIn a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose.",
+        "uk-UA": ""
+      },
+      "masterVariant": {
+        "id": 1,
+        "sku": "BOOK-FAN-002",
+        "key": "book-FAN002-master",
+        "prices": [
+          {
+            "id": "54785c02-1b29-40f8-be2f-556b4e801ec6",
+            "value": {
+              "type": "centPrecision",
+              "currencyCode": "USD",
+              "centAmount": 1999,
+              "fractionDigits": 2
+            },
+            "key": "BOOK-FAN-002",
+            "discounted": {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 1799,
+                "fractionDigits": 2
+              },
+              "discount": {
+                "typeId": "product-discount",
+                "id": "ea2eb0d7-f941-4e78-a2ff-9fd5c6a84bcf"
+              }
+            }
+          }
+        ],
+        "images": [
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/71Ep7UNeTtL-CQb3dAjy.jpg",
+            "label": "cover",
+            "dimensions": {
+              "w": 1707,
+              "h": 2560
+            }
+          },
+          {
+            "url": "https://images.eu-central-1.aws.commercetools.com/739eb3ae-f812-47ac-8e52-11321a3bf9c8/clp0954-M1x8ValO.jpg",
+            "label": "paperback",
+            "dimensions": {
+              "w": 960,
+              "h": 1280
+            }
+          }
+        ],
+        "attributes": [
+          {
+            "name": "author",
+            "value": {
+              "en-US": "J.R.R. Tolkien"
+            }
+          },
+          {
+            "name": "isbn",
+            "value": "9780618346257"
+          },
+          {
+            "name": "publisher",
+            "value": "Houghton Mifflin Harcourt"
+          },
+          {
+            "name": "pageCount",
+            "value": 398
+          },
+          {
+            "name": "publishedDate",
+            "value": "2003"
+          },
+          {
+            "name": "genre",
+            "value": "Fantasy, Classics, Fiction, Adventure"
+          }
+        ],
+        "assets": [],
+        "availability": {
+          "isOnStock": true,
+          "availableQuantity": 999,
+          "version": 1,
+          "id": "cf2e5067-ed9e-4ca9-b056-6d72507f2572"
+        }
+      },
+      "variants": [],
+      "searchKeywords": {},
+      "attributes": [],
+      "hasStagedChanges": false,
+      "published": true,
+      "key": "book-FAN-002",
+      "priceMode": "Standalone",
+      "createdAt": "2025-05-24T13:24:00.626Z",
+      "lastModifiedAt": "2025-05-27T16:17:31.040Z"
+    }
+  ]
+}

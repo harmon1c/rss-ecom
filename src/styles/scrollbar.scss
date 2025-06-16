@@ -1,0 +1,15 @@
+.scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--honeycomb-light);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: var(--honey-gold-600);
+    cursor: pointer;
+  }
+}

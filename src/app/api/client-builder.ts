@@ -44,6 +44,33 @@ export const createRefreshCustomerClient = (refreshToken: string): Client => {
   return client;
 };
 
+export const createAnonymousClient = (): Client => {
+  const anonymousAuthMiddlewareOptions = {
+    credentials: {
+      clientId: process.env.NEXT_PUBLIC_CTP_CLIENT_ID,
+      clientSecret: process.env.NEXT_PUBLIC_CTP_CLIENT_SECRET,
+    },
+    host: process.env.NEXT_PUBLIC_CTP_AUTH_URL,
+    httpClient: fetch,
+    projectKey,
+    scopes: [
+      `create_anonymous_token:${projectKey}`,
+      `view_published_products:${projectKey}`,
+      `view_categories:${projectKey}`,
+      `manage_my_profile:${projectKey}`,
+      `manage_my_shopping_lists:${projectKey}`,
+      `manage_my_orders:${projectKey}`,
+      `manage_my_payments:${projectKey}`,
+      `manage_orders:${projectKey}`,
+    ],
+  };
+
+  return new ClientBuilder()
+    .withAnonymousSessionFlow(anonymousAuthMiddlewareOptions)
+    .withHttpMiddleware(httpMiddlewareOptions)
+    .build();
+};
+
 export const createCustomerClient = (email: string, password: string): Client => {
   const authMiddlewareOptionsToLogin: PasswordAuthMiddlewareOptions = {
     credentials: {

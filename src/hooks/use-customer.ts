@@ -2,12 +2,13 @@ import { useCustomerClient } from '@/lib/customer-client';
 import myTokenCache from '@/app/api/token-cache';
 import setLogin from '@/app/actions/set-login';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { toast } from '@/hooks/use-toast';
+import { useResponsiveToast } from '@/hooks/use-responsive-toast';
 import { useRouter } from 'next/navigation';
 import useAuthStore from '@/store/auth-store';
 
 export function useCustomer() {
   const { customerClient } = useCustomerClient();
+  const { toast } = useResponsiveToast();
   const { login, logout } = useAuthStore();
   const queryClient = useQueryClient();
   const router = useRouter();
@@ -43,7 +44,29 @@ export function useCustomer() {
         description: 'Successfully logged in',
         title: 'Welcome back!',
       });
-      router.push('/products');
+      router.push('/');
+    },
+    onError: (error) => {
+      toast({
+        description: error instanceof Error ? error.message : 'Failed to log in',
+        title: 'Login error',
+        variant: 'destructive',
+      });
+    },
+  });
+
+  const reLoginMutation = useMutation({
+    mutationFn: async ({ email, password }: { email: string; password: string }) => {
+      const customer = await customerClient.login(email, password);
+
+      if (myTokenCache.refreshToken) {
+        await setLogin(myTokenCache.refreshToken);
+      }
+
+      return customer;
+    },
+    onSuccess: () => {
+      login();
     },
     onError: (error) => {
       toast({
@@ -75,7 +98,7 @@ export function useCustomer() {
         description: 'Your account has been created successfully',
         title: 'Success!',
       });
-      router.push('/products');
+      router.push('/');
     },
     onError: (error) => {
       toast({
@@ -104,6 +127,7 @@ export function useCustomer() {
     login: loginMutation.mutate,
     register: registerMutation.mutate,
     logout: logoutMutation.mutate,
+    reLogin: reLoginMutation.mutate,
     isLoginLoading: loginMutation.isPending,
     isRegisterLoading: registerMutation.isPending,
     isLogoutLoading: logoutMutation.isPending,

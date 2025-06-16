@@ -1,5 +1,7 @@
 'use client';
 
+import type { ControllerRenderProps, FieldPath } from 'react-hook-form';
+
 import { StyledInput } from '@/components/ui/StyledInput';
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
@@ -9,76 +11,290 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { useCustomer } from '@/hooks/use-customer';
-import { toast } from '@/hooks/use-toast';
+import { useResponsiveToast } from '@/hooks/use-responsive-toast';
 import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { format } from 'date-fns';
-import { CalendarIcon } from 'lucide-react';
+import { CalendarIcon, Eye, EyeOff } from 'lucide-react';
+import { forwardRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-const FormSchema = z
-  .object({
-    billCity: z.string().min(1, 'Your bill city is required'),
-    billCountry: z.string().min(1, 'Country is required'),
-    billPostalCode: z.string().min(1, 'Your bill postal code is required'),
-    billSetDefault: z.boolean(),
-    billStreet: z.string().min(1, 'Your bill street is required'),
-    confirmPassword: z.string(),
-    dateOfBirth: z
-      .date({
-        invalid_type_error: 'Choose a valid date',
-        required_error: 'Choose your birthday',
-      })
-      .nullable(),
-    email: z.string().email('Write a valid email address'),
-    firstName: z.string().min(1, 'First name is required'),
-    lastName: z.string().min(1, 'Last name is required'),
-    password: z
-      .string()
-      .min(5, 'Password must be at least 5 characters')
-      .refine((val) => /[a-z]/.test(val), {
-        message: 'Password must contain at least one lowercase letter',
-      })
-      .refine((val) => /[A-Z]/.test(val), {
-        message: 'Password must contain at least one uppercase letter',
-      }),
-    sameBillShip: z.boolean(),
-    shipCity: z.string().optional(),
-    shipCountry: z.string().optional(),
-    shipPostalCode: z.string().optional(),
-    shipSetDefault: z.boolean(),
-    shipStreet: z.string().optional(),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ['confirmPassword'],
-  })
-  .refine(
-    (data) => {
-      if (data.sameBillShip) {
-        return true;
-      }
+export type PasswordInputProps<TFieldValues extends Record<string, unknown> = Record<string, unknown>> = {
+  field: ControllerRenderProps<TFieldValues, FieldPath<TFieldValues>>;
+  placeholder?: string;
+};
 
-      return (
-        !!data.shipCity &&
-        data.shipCity.length > 0 &&
-        !!data.shipCountry &&
-        data.shipCountry.length > 0 &&
-        !!data.shipPostalCode &&
-        data.shipPostalCode.length > 0 &&
-        !!data.shipStreet &&
-        data.shipStreet.length > 0
-      );
+type FormData = z.infer<typeof FormSchema>;
+
+function validatePostalCode(postalCode: string, country: string): { format: string; isValid: boolean } {
+  const postalCodePatterns: Record<string, { format: string; pattern: RegExp }> = {
+    CA: {
+      format: 'A1A 1A1 (e.g., M5V 3L9)',
+      pattern: /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/,
     },
-    {
-      message: 'Shipping address fields are required when using different addresses',
-      path: ['shipCity'],
+    DE: {
+      format: '12345',
+      pattern: /^\d{5}$/,
     },
+    FR: {
+      format: '12345',
+      pattern: /^\d{5}$/,
+    },
+    GB: {
+      format: 'AA1 1AA, A1 1AA, etc.',
+      pattern: /^[A-Z]{1,2}[0-9][A-Z0-9]? ?[0-9][A-Z]{2}$/i,
+    },
+    US: {
+      format: '12345 or 12345-6789',
+      pattern: /^\d{5}(-\d{4})?$/,
+    },
+  };
+
+  const countryPattern = postalCodePatterns[country];
+  if (!countryPattern) {
+    return { format: '', isValid: true };
+  }
+
+  return {
+    format: countryPattern.format,
+    isValid: countryPattern.pattern.test(postalCode),
+  };
+}
+
+export const PasswordInput = forwardRef<
+  HTMLInputElement,
+  {
+    field: {
+      name: string;
+      onBlur: () => void;
+      onChange: (value: string) => void;
+      value: string;
+    };
+    placeholder?: string;
+  }
+>(({ field, placeholder = 'password' }, ref) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const safeField = {
+    ...field,
+    value: String(field.value || ''),
+  };
+
+  const containsSpaces = /\s/.test(safeField.value);
+  const tooShort = safeField.value.length > 0 && safeField.value.length < 8;
+  const noLowerCase = safeField.value.length > 0 && !/[a-z]/.test(safeField.value);
+  const noUpperCase = safeField.value.length > 0 && !/[A-Z]/.test(safeField.value);
+  const noDigit = safeField.value.length > 0 && !/\d/.test(safeField.value);
+
+  const hasError = containsSpaces || tooShort || noLowerCase || noUpperCase || noDigit;
+  const errorClass = hasError ? 'border-red-500 focus:border-red-500 bg-red-50/30' : '';
+
+  let errorMessage = null;
+  if (containsSpaces) {
+    errorMessage = 'Password cannot contain spaces!';
+  } else if (tooShort) {
+    errorMessage = 'Password must be at least 8 characters';
+  } else if (noUpperCase) {
+    errorMessage = 'Password must contain an uppercase letter';
+  } else if (noLowerCase) {
+    errorMessage = 'Password must contain a lowercase letter';
+  } else if (noDigit) {
+    errorMessage = 'Password must contain a number';
+  }
+
+  return (
+    <div className="relative w-full">
+      <StyledInput
+        placeholder={placeholder}
+        type={showPassword ? 'text' : 'password'}
+        {...safeField}
+        className={errorClass}
+        onChange={(e) => {
+          const { value } = e.target;
+          safeField.onChange(value);
+
+          // visual on input
+          const inputHasError =
+            /\s/.test(value) ||
+            (value.length > 0 && value.length < 8) ||
+            (value.length > 0 && !/[a-z]/.test(value)) ||
+            (value.length > 0 && !/[A-Z]/.test(value)) ||
+            (value.length > 0 && !/\d/.test(value));
+
+          if (inputHasError) {
+            e.target.classList.add('border-red-500');
+            e.target.classList.add('bg-red-50/30');
+          } else {
+            e.target.classList.remove('border-red-500');
+            e.target.classList.remove('bg-red-50/30');
+          }
+        }}
+        ref={ref}
+      />
+      <button
+        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 z-10 flex items-center justify-center sm:top-[23px]"
+        onClick={(e) => {
+          e.preventDefault();
+          setShowPassword(!showPassword);
+        }}
+        type="button"
+      >
+        {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+      </button>
+
+      {errorMessage && <p className="text-xs font-medium text-red-500 mt-1">{errorMessage}</p>}
+    </div>
   );
+});
+
+PasswordInput.displayName = 'PasswordInput';
+
+const FormSchemaBase = z.object({
+  billCity: z
+    .string()
+    .trim()
+    .min(1, 'Your bill city is required')
+    .refine((val) => /^[A-Za-zА-Яа-я\s'-]+$/.test(val), {
+      message: 'City can only contain letters, spaces, hyphens and apostrophes',
+    }),
+  billCountry: z.string().min(1, 'Country is required'),
+  billPostalCode: z
+    .string()
+    .min(1, 'Your bill postal code is required')
+    .refine((val) => val.trim() === val, {
+      message: 'Postal code cannot start or end with whitespace',
+    }),
+  billSetDefault: z.boolean(),
+  billStreet: z.string().trim().min(1, 'Your bill street is required'),
+  confirmPassword: z.string(),
+  dateOfBirth: z.date({
+    invalid_type_error: 'Choose a valid date',
+    required_error: 'Choose your birthday',
+  }),
+  email: z
+    .string()
+    .email('Write a valid email address')
+    .refine((val) => !/\s/.test(val), {
+      message: 'Email address must not contain whitespace',
+    }),
+  firstName: z
+    .string()
+    .trim()
+    .min(1, 'First name is required')
+    .refine((val) => /^[A-Za-zА-Яа-я\s'-]+$/.test(val), {
+      message: 'First name can only contain letters, spaces, hyphens and apostrophes',
+    }),
+  lastName: z
+    .string()
+    .trim()
+    .min(1, 'Last name is required')
+    .refine((val) => /^[A-Za-zА-Яа-я\s'-]+$/.test(val), {
+      message: 'Last name can only contain letters, spaces, hyphens and apostrophes',
+    }),
+  password: z
+    .string()
+    .min(8, 'Password must be at least 8 characters')
+    .refine((val) => /[a-z]/.test(val), {
+      message: 'Password must contain at least one lowercase letter',
+    })
+    .refine((val) => /[A-Z]/.test(val), {
+      message: 'Password must contain at least one uppercase letter',
+    })
+    .refine((val) => /\d/.test(val), {
+      message: 'Password must contain at least one number',
+    })
+    .refine((val) => !/\s/.test(val), {
+      message: 'Password cannot contain spaces',
+    }),
+  sameBillShip: z.boolean(),
+  shipCity: z.string().optional(),
+  shipCountry: z.string().optional(),
+  shipPostalCode: z.string().optional(),
+  shipSetDefault: z.boolean(),
+  shipStreet: z.string().optional(),
+});
+
+const FormSchema = FormSchemaBase.superRefine((data, ctx) => {
+  const billPostalValidation = validatePostalCode(data.billPostalCode, data.billCountry);
+  if (!billPostalValidation.isValid) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: `Invalid postal code format for ${data.billCountry}. Expected format: ${billPostalValidation.format}`,
+      path: ['billPostalCode'],
+    });
+  }
+
+  if (!data.sameBillShip && data.shipPostalCode) {
+    const country = data.shipCountry || data.billCountry;
+    const shipPostalValidation = validatePostalCode(data.shipPostalCode, country);
+    if (!shipPostalValidation.isValid) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: `Invalid postal code format for ${country}. Expected format: ${shipPostalValidation.format}`,
+        path: ['shipPostalCode'],
+      });
+    }
+  }
+
+  if (data.password !== data.confirmPassword) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Passwords don't match",
+      path: ['confirmPassword'],
+    });
+  }
+
+  const today = new Date();
+  const minimumAge = 13;
+  const cutoffDate = new Date(today.getFullYear() - minimumAge, today.getMonth(), today.getDate());
+
+  if (data.dateOfBirth > cutoffDate) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'You must be at least 13 years old to register',
+      path: ['dateOfBirth'],
+    });
+  }
+
+  if (!data.sameBillShip) {
+    if (!data.shipCity || data.shipCity.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Shipping city is required when using different addresses',
+        path: ['shipCity'],
+      });
+    }
+
+    if (!data.shipCountry || data.shipCountry.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Shipping country is required when using different addresses',
+        path: ['shipCountry'],
+      });
+    }
+
+    if (!data.shipPostalCode || data.shipPostalCode.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Shipping postal code is required when using different addresses',
+        path: ['shipPostalCode'],
+      });
+    }
+
+    if (!data.shipStreet || data.shipStreet.length === 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Shipping street is required when using different addresses',
+        path: ['shipStreet'],
+      });
+    }
+  }
+});
 
 // eslint-disable-next-line max-lines-per-function
 export default function RegistrationForm(): JSX.Element {
+  const { toast } = useResponsiveToast();
   const { isRegisterLoading, register } = useCustomer();
   const form = useForm<z.infer<typeof FormSchema>>({
     defaultValues: {
@@ -103,7 +319,25 @@ export default function RegistrationForm(): JSX.Element {
     resolver: zodResolver(FormSchema),
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>): void {
+  function onSubmit(data: FormData): void {
+    if (/\s/.test(data.email)) {
+      toast({
+        description: 'Email address contains whitespace. Please remove all spaces.',
+        title: 'Validation Error',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    if (/\s/.test(data.password) || /\s/.test(data.confirmPassword)) {
+      toast({
+        description: 'Passwords cannot contain spaces. Please remove all spaces.',
+        title: 'Validation Error',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     const customerParams = {
       addresses: [
         {
@@ -113,8 +347,8 @@ export default function RegistrationForm(): JSX.Element {
           streetName: data.billStreet,
         },
       ],
-      dateOfBirth: data.dateOfBirth ? format(data.dateOfBirth, 'yyyy-MM-dd') : '2000-01-01',
-      defaultBillingAddress: data.billSetDefault ? 0 : 0,
+      dateOfBirth: format(data.dateOfBirth, 'yyyy-MM-dd'),
+      defaultBillingAddress: data.billSetDefault ? 0 : undefined,
       defaultShippingAddress: data.sameBillShip ? 0 : 1,
       email: data.email,
       firstName: data.firstName,
@@ -122,17 +356,12 @@ export default function RegistrationForm(): JSX.Element {
       password: data.password,
     };
 
-    if (!data.sameBillShip) {
-      const shipCity = data.shipCity || data.billCity;
-      const shipCountry = data.shipCountry || data.billCountry;
-      const shipPostalCode = data.shipPostalCode || data.billPostalCode;
-      const shipStreet = data.shipStreet || data.billStreet;
-
+    if (!data.sameBillShip && data.shipCity && data.shipCountry && data.shipPostalCode && data.shipStreet) {
       customerParams.addresses.push({
-        city: shipCity || '',
-        country: shipCountry || 'US',
-        postalCode: shipPostalCode || '',
-        streetName: shipStreet || '',
+        city: data.shipCity,
+        country: data.shipCountry,
+        postalCode: data.shipPostalCode,
+        streetName: data.shipStreet,
       });
     }
 
@@ -166,9 +395,29 @@ export default function RegistrationForm(): JSX.Element {
             <FormItem className="grow basis-full sm:basis-2/5">
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <StyledInput placeholder="your.email@gmail.com" type="email" {...field} value={field.value || ''} />
+                <StyledInput
+                  placeholder="your.email@gmail.com"
+                  type="text"
+                  {...field}
+                  className={/\s/.test(field.value || '') ? 'border-red-500 focus:border-red-500 bg-red-50/30' : ''}
+                  // MANUAL WAY, DO NOT USE, ONLY FOR COMPLETE CROSS-CHECK!
+                  onChange={(e) => {
+                    const originalValue = e.target.value;
+                    field.onChange(originalValue);
+
+                    if (/\s/.test(originalValue)) {
+                      e.target.classList.add('border-red-500');
+                    } else {
+                      e.target.classList.remove('border-red-500');
+                    }
+                  }}
+                  value={field.value || ''}
+                />
               </FormControl>
-              <FormMessage />
+              {/\s/.test(field.value || '') && (
+                <p className="text-xs font-medium text-red-500 mt-1">Email contains spaces! Please remove them.</p>
+              )}
+              {/* <FormMessage /> */}
             </FormItem>
           )}
         />
@@ -231,15 +480,39 @@ export default function RegistrationForm(): JSX.Element {
                         const currentDate = field.value || new Date();
                         const newDate = new Date(currentDate);
                         newDate.setFullYear(newYear);
+
+                        const today = new Date();
+                        const minimumAge = 13;
+                        const cutoffDate = new Date(
+                          today.getFullYear() - minimumAge,
+                          today.getMonth(),
+                          today.getDate(),
+                        );
+
+                        if (newDate > cutoffDate) {
+                          newDate.setFullYear(cutoffDate.getFullYear());
+                        }
+
                         field.onChange(newDate);
+
+                        const calendarElement = document.querySelector('.react-calendar');
+                        if (calendarElement) {
+                          calendarElement.dispatchEvent(new Event('yearchange', { bubbles: true }));
+                        }
                       }}
                       value={field.value ? new Date(field.value).getFullYear() : 2000}
                     >
-                      {Array.from({ length: 100 }, (_, i) => (
-                        <option key={i} value={2010 - i}>
-                          {2010 - i}
-                        </option>
-                      ))}
+                      {Array.from({ length: 100 }, (_, i) => {
+                        const currentYear = new Date().getFullYear();
+                        const minimumAge = 13;
+                        const maxYear = currentYear - minimumAge;
+                        const year = maxYear - i;
+                        return (
+                          <option key={i} value={year}>
+                            {year}
+                          </option>
+                        );
+                      })}
                     </select>
                     <select
                       className="text-sm border rounded px-2 py-1"
@@ -249,6 +522,11 @@ export default function RegistrationForm(): JSX.Element {
                         const newDate = new Date(currentDate);
                         newDate.setMonth(newMonth);
                         field.onChange(newDate);
+
+                        const calendarElement = document.querySelector('.react-calendar');
+                        if (calendarElement) {
+                          calendarElement.dispatchEvent(new Event('monthchange', { bubbles: true }));
+                        }
                       }}
                       value={field.value ? new Date(field.value).getMonth() : 0}
                     >
@@ -274,10 +552,33 @@ export default function RegistrationForm(): JSX.Element {
                   </div>
                   <Calendar
                     className="bg-background border rounded-md"
-                    disabled={(date) => date > new Date() || date < new Date('1900-01-01')}
+                    defaultMonth={field.value}
+                    disabled={(date) => {
+                      const today = new Date();
+                      const minimumAge = 13;
+                      const cutoffDate = new Date(today.getFullYear() - minimumAge, today.getMonth(), today.getDate());
+                      return date > cutoffDate || date < new Date('1900-01-01');
+                    }}
                     initialFocus
                     mode="single"
-                    onSelect={field.onChange}
+                    month={field.value || undefined}
+                    onSelect={(date) => {
+                      if (date) {
+                        const today = new Date();
+                        const minimumAge = 13;
+                        const cutoffDate = new Date(
+                          today.getFullYear() - minimumAge,
+                          today.getMonth(),
+                          today.getDate(),
+                        );
+
+                        if (date > cutoffDate) {
+                          field.onChange(cutoffDate);
+                        } else {
+                          field.onChange(date);
+                        }
+                      }
+                    }}
                     selected={field.value || undefined}
                   />
                 </PopoverContent>
@@ -337,9 +638,66 @@ export default function RegistrationForm(): JSX.Element {
             <FormItem className="grow basis-full sm:basis-2/5">
               <FormLabel>Billing postal code</FormLabel>
               <FormControl>
-                <StyledInput placeholder="postal code" {...field} />
+                <StyledInput
+                  placeholder="postal code"
+                  {...field}
+                  className={
+                    form.formState.errors.billPostalCode ? 'border-red-500 focus:border-red-500 bg-red-50/30' : ''
+                  }
+                  onChange={(e) => {
+                    field.onChange(e);
+
+                    const { value } = e.target;
+                    const country = form.getValues('billCountry');
+                    const validation = validatePostalCode(value, country);
+
+                    if (!validation.isValid && value) {
+                      e.target.classList.add('border-red-500');
+                      e.target.classList.add('bg-red-50/30');
+                    } else {
+                      e.target.classList.remove('border-red-500');
+                      e.target.classList.remove('bg-red-50/30');
+                    }
+                  }}
+                />
               </FormControl>
               <FormMessage />
+
+              {((): JSX.Element => {
+                const country = form.watch('billCountry');
+                let formatMessage = '';
+                switch (country) {
+                  case 'US':
+                    formatMessage = 'Format: 12345 or 12345-6789';
+                    break;
+                  case 'CA':
+                    formatMessage = 'Format: A1A 1A1 (e.g., M5V 3L9)';
+                    break;
+                  case 'GB':
+                    formatMessage = 'Format: AA1 1AA or A1 1AA';
+                    break;
+                  case 'DE':
+                  case 'FR':
+                    formatMessage = 'Format: 12345';
+                    break;
+                  default:
+                    formatMessage = 'Format: postal code';
+                    break;
+                }
+
+                const postalCode = field.value || '';
+                const validation = validatePostalCode(postalCode, country);
+
+                if (postalCode && !validation.isValid) {
+                  return (
+                    <p className="text-xs font-medium text-red-500 mt-1">
+                      Invalid format for {country}. Expected: {validation.format}
+                    </p>
+                  );
+                }
+
+                return <p className="text-xs text-muted-foreground mt-1">{formatMessage}</p>;
+              })()}
             </FormItem>
           )}
         />
@@ -462,9 +820,66 @@ export default function RegistrationForm(): JSX.Element {
                 <FormItem className="grow basis-full sm:basis-2/5">
                   <FormLabel>Shipping postal code</FormLabel>
                   <FormControl>
-                    <StyledInput placeholder="postal code" {...field} />
+                    <StyledInput
+                      placeholder="postal code"
+                      {...field}
+                      className={
+                        form.formState.errors.shipPostalCode ? 'border-red-500 focus:border-red-500 bg-red-50/30' : ''
+                      }
+                      onChange={(e) => {
+                        field.onChange(e);
+
+                        const { value } = e.target;
+                        const country = form.getValues('shipCountry') || form.getValues('billCountry');
+                        const validation = validatePostalCode(value, country);
+
+                        if (!validation.isValid && value) {
+                          e.target.classList.add('border-red-500');
+                          e.target.classList.add('bg-red-50/30');
+                        } else {
+                          e.target.classList.remove('border-red-500');
+                          e.target.classList.remove('bg-red-50/30');
+                        }
+                      }}
+                    />
                   </FormControl>
                   <FormMessage />
+
+                  {((): JSX.Element => {
+                    const country = form.watch('shipCountry') || form.watch('billCountry');
+                    let formatMessage = '';
+                    switch (country) {
+                      case 'US':
+                        formatMessage = 'Format: 12345 or 12345-6789';
+                        break;
+                      case 'CA':
+                        formatMessage = 'Format: A1A 1A1 (e.g., M5V 3L9)';
+                        break;
+                      case 'GB':
+                        formatMessage = 'Format: AA1 1AA or A1 1AA';
+                        break;
+                      case 'DE':
+                      case 'FR':
+                        formatMessage = 'Format: 12345';
+                        break;
+                      default:
+                        formatMessage = 'Format: postal code';
+                        break;
+                    }
+
+                    const postalCode = field.value || '';
+                    const validation = validatePostalCode(postalCode, country);
+
+                    if (postalCode && !validation.isValid) {
+                      return (
+                        <p className="text-xs font-medium text-red-500 mt-1">
+                          Invalid format for {country}. Expected: {validation.format}
+                        </p>
+                      );
+                    }
+
+                    return <p className="text-xs text-muted-foreground mt-1">{formatMessage}</p>;
+                  })()}
                 </FormItem>
               )}
             />
@@ -474,7 +889,7 @@ export default function RegistrationForm(): JSX.Element {
               name="shipStreet"
               render={({ field }) => (
                 <FormItem className="grow basis-full sm:basis-2/5">
-                  <FormLabel>Shipping postal code</FormLabel>
+                  <FormLabel>Shipping street</FormLabel>
                   <FormControl>
                     <StyledInput placeholder="street" {...field} />
                   </FormControl>
@@ -510,7 +925,7 @@ export default function RegistrationForm(): JSX.Element {
             <FormItem className="grow basis-full sm:basis-2/5">
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <StyledInput placeholder="password" type="password" {...field} />
+                <PasswordInput field={field} placeholder="password" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -524,9 +939,12 @@ export default function RegistrationForm(): JSX.Element {
             <FormItem className="grow basis-full sm:basis-2/5">
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
-                <StyledInput placeholder="confirm password" type="password" {...field} />
+                <PasswordInput field={field} placeholder="confirm password" />
               </FormControl>
-              <FormMessage />
+              {form.getValues('password') !== field.value && field.value && (
+                <p className="text-xs font-medium text-red-500 mt-1">Passwords don&apos;t match</p>
+              )}
+              {/* <FormMessage /> */}
             </FormItem>
           )}
         />
@@ -535,7 +953,16 @@ export default function RegistrationForm(): JSX.Element {
 
         <Button
           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-2.5 text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-60"
-          disabled={isRegisterLoading}
+          disabled={
+            isRegisterLoading ||
+            /\s/.test(form.watch('password') || '') ||
+            /\s/.test(form.watch('email') || '') ||
+            form.watch('password') !== form.watch('confirmPassword') ||
+            !form.formState.isValid ||
+            !!form.formState.errors.email ||
+            !!form.formState.errors.password ||
+            !!form.formState.errors.confirmPassword
+          }
           type="submit"
         >
           {isRegisterLoading ? (

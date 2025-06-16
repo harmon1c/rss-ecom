@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
+import { CartProvider } from '@/components/cart/CartContext';
 import LayoutContent from '@/components/layout/LayoutContent/LayoutContent';
 import TransitionEffect from '@/components/ui/TransitionEffect';
 import { Toaster } from '@/components/ui/toaster';
@@ -31,10 +32,12 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
         <QueryProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <CustomerProvider>
-              <TransitionEffect>
-                <LayoutContent>{children}</LayoutContent>
-              </TransitionEffect>
-              <Toaster />
+              <CartProvider>
+                <TransitionEffect>
+                  <LayoutContent>{children}</LayoutContent>
+                </TransitionEffect>
+                <Toaster />
+              </CartProvider>
             </CustomerProvider>
           </ThemeProvider>
         </QueryProvider>

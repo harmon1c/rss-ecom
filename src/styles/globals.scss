@@ -158,6 +158,18 @@
   .form-input-focus {
     @apply focus-visible:ring-1 focus-visible:ring-primary focus-visible:border-primary;
   }
+
+  .text-shadow-sm {
+    text-shadow:
+      0 0 1px rgba(255, 255, 255, 0.1),
+      0 0 2px rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .text-destructive {
+    text-shadow:
+      0 0 1px rgba(255, 179, 15, 0.9),
+      0 0 2px rgba(0, 0, 0, 0.9);
+  }
 }
 
 // Bee loader animation

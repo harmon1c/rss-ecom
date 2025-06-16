@@ -171,7 +171,7 @@ describe('useCustomer', () => {
     expect(customerClient.login).toHaveBeenCalledWith('test@example.com', 'Password123');
     expect(authStore.login).toHaveBeenCalled();
     expect(setLogin).toHaveBeenCalledWith('fake-token');
-    expect(router.push).toHaveBeenCalledWith('/products');
+    expect(router.push).toHaveBeenCalledWith('/');
   });
 
   it('provides register function that works correctly', async () => {
@@ -204,7 +204,7 @@ describe('useCustomer', () => {
     expect(customerClient.login).toHaveBeenCalledWith('new@example.com', 'Password123');
     expect(authStore.login).toHaveBeenCalled();
     expect(setLogin).toHaveBeenCalledWith('fake-token');
-    expect(router.push).toHaveBeenCalledWith('/products');
+    expect(router.push).toHaveBeenCalledWith('/');
   });
 
   it('provides logout function that works correctly', async () => {
